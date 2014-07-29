@@ -6,9 +6,9 @@ from crushapp.models import Crush, calculate, count_char
 
 def index(request):
 	if request.method == 'POST':
-		fname = request.POST['fname']
-		lname = request.POST['lname']
-		fullname = fname + 'loves' + 'lname'
+		fname = request.POST['fname'].lower()
+		lname = request.POST['lname'].lower()
+		fullname = fname + 'loves' + lname
 		result = count_char(fullname)
 		final_result = calculate(result)
 		a = Crush()
