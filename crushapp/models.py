@@ -1,14 +1,14 @@
 from django.db import models
 
 class Crush(models.Model):
-	"""To save the details"""
-	
-	first_name = models.CharField(max_length=30)
-	crush_name = models.CharField(max_length=30)
-	crush = models.IntegerField()
+    """To save the details"""
+    first_name = models.CharField(max_length=30)
+    crush_name = models.CharField(max_length=30)
+    crush = models.IntegerField()
+    time = models.DateTimeField(auto_now_add=True, blank=True)
 
-	def __unicode__(self):	
-		return self.first_name +' - '+ self.crush_name+' - '+ str(self.crush) + '%'
+    def __unicode__(self):	
+        return self.first_name +' - '+ self.crush_name+' - '+ str(self.crush) + '%'
 
 
 def count_char(word):
